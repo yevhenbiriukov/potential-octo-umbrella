@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Fournil — Restaurant Gastronomique</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 1. NAVIGATION FIXE -->
+  <header class="nav">
+    <div class="nav-logo">
+      <i class="fa-solid fa-utensils"></i> Le Fournil
+    </div>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#histoire">Notre histoire</a>
+      <a href="#contact">Contact</a>
+      <button id="btn-reservation" class="btn btn-or">
+        <i class="fa-solid fa-calendar"></i> Réserver
+      </button>
+    </nav>
+  </header>
+
+  <!-- 2. SECTION HÉRO -->
+  <section class="hero">
+    <div class="conteneur hero-contenu">
+      <p class="surtitre">Restaurant gastronomique</p>
+      <h1>Une cuisine du terroir, revisitée avec passion</h1>
+      <p class="description">
+        Situé au cœur de Normandie, Le Fournil propose une gastronomie de
+        saison élaborée par le chef Pierre Moreau, deux étoiles Michelin.
+      </p>
+      <div class="hero-cta">
+        <button id="btn-reservation-2" class="btn btn-or">
+          <i class="fa-solid fa-calendar"></i> Réserver une table
+        </button>
+        <a href="#menu" class="btn btn-outline">
+          <i class="fa-solid fa-book-open"></i> Voir le menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. INFORMATIONS CLÉS (3 colonnes) -->
+  <section class="infos-cles">
+    <div class="conteneur grille-3">
+      <div class="info-card">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Horaires</h3>
+        <p>Mar-Sam 12h–14h & 19h–22h</p>
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <h3>Adresse</h3>
+        <p>14 Rue du Vieux Marché, Rouen</p>
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-phone"></i>
+        <h3>Réservations</h3>
+        <a href="tel:+33235000000">02 35 00 00 00</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MENU (Grille CSS) -->
+  <section class="menu" id="menu">
+    <div class="conteneur">
+      <p class="surtitre-couleur">NOS SPÉCIALITÉS</p>
+      <h2>La carte du moment</h2>
+      <div class="grille-menu">
+        <!-- Cartes plats (x6) -->
+        <article class="carte-plat">
+          <div class="carte-image">
+            <img src="images/magret.jpg" alt="Magret de canard" />
+          </div>
+          <div class="carte-corps">
+            <p class="categorie">Plat principal</p>
+            <h3>Magret de canard</h3>
+            <p>Sauce cerises noires, purée de céleri</p>
+            <div class="carte-pied">
+              <span class="prix">24 €</span>
+              <span class="badge-signature">
+                <i class="fa-solid fa-star"></i> Signature
+              </span>
+            </div>
+          </div>
+        </article>
+        <article class="carte-plat">
+          <div class="carte-image">
+            <img src="images/soupe.jpg" alt="Soupe à l'oignon" />
+          </div>
+          <div class="carte-corps">
+            <p class="categorie">Plat principal</p>
+            <h3>Soupe à l'oignon</h3>
+            <p>Soupe traditionnelle gratinée au fromage</p>
+            <div class="carte-pied">
+              <span class="prix">18 €</span>
+              <span class="badge-signature">
+                <i class="fa-solid fa-star"></i> Signature
+              </span>
+            </div>
+          </div>
+        </article>
+        <article class="carte-plat">
+          <div class="carte-image">
+            <img src="images/crevettes.jpg" alt="Crevettes grillées" />
+          </div>
+          <div class="carte-corps">
+            <p class="categorie">Poisson</p>
+            <h3>Crevettes grillées</h3>
+            <p>Crevettes marinées servies avec salade fraîche</p>
+            <div class="carte-pied">
+              <span class="prix">20 €</span>
+              <span class="badge-signature">
+                <i class="fa-solid fa-star"></i> Signature
+              </span>
+            </div>
+          </div>
+        </article>
+        <!-- ... répéter pour les autres plats -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. POPIN DE RÉSERVATION -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" id="btn-fermer">&times;</button>
+      <h2>Réserver une table</h2>
+      <p>Choisissez votre date et l'heure souhaitées.</p>
+      <form id="form-reservation">
+        <label>Nom</label>
+        <input id="input-nom" type="text" placeholder="Votre nom">
+
+        <label>Téléphone</label>
+        <input type="tel" placeholder="Votre numéro de téléphone">
+
+        <label>Date</label>
+        <input type="date">
+
+        <label>Heure</label>
+        <input type="time">
+
+        <label>Nombre de personnes</label>
+        <select>
+          <option>1 personne</option>
+          <option>2 personnes</option>
+          <option>3 personnes</option>
+          <option>4 personnes</option>
+          <option>5 personnes</option>
+          <option>plus de 5 personnes</option>
+        </select>
+        <button type="submit">Confirmer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. FOOTER -->
+  <footer>
+    <div class="conteneur pied-contenu">
+      <p>© 2025 Le Fournil</p>
+      <div class="reseaux">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
